@@ -89,7 +89,7 @@ DATABASES = {
         'NAME': 'trydjango',
         'USER': 'postgres',
         'PASSWORD': 'caio12313134',
-        'HOST': 'localhost',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
