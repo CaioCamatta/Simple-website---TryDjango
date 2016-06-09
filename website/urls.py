@@ -24,6 +24,9 @@ urlpatterns = [
     url(r'^accounts/', include('registration.backends.default.urls')),
 ]
 
+handler500 = 'newsletter.views.handler500'
+handler404 = 'newsletter.views.handler404'
+
 # Serving files uploaded by a user and static files DURING DEVELOPMENT ONLY
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

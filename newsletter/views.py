@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
 from django.conf import settings
+from django.shortcuts import render_to_response
+from django.template import RequestContext
 
 from .forms import SignUpForm, ContactForm
 from .models import SignUp
@@ -89,3 +91,17 @@ def contact(request):
 
 def about(request):
     return render(request, 'newsletter/about.html', {})
+
+
+def handler404(request):
+    response = render_to_response('404.html', {},
+                                  context_instance=RequestContext(request))
+    response.status_code = 404
+    return response
+
+
+def handler500(request):
+    response = render_to_response('500.html', {},
+                                  context_instance=RequestContext(request))
+    response.status_code = 500
+    return response
