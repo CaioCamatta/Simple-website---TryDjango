@@ -2,16 +2,13 @@ import os
 from django.conf import settings
 import dj_database_url
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'bogo%m6&1gsl3@t&1@^70wuis58h1qs(bnwwqb9b%t^!sr)w5x'
-
 DEBUG = False
 TEMPLATE_DEBUG = True
 
 DATABASES = settings.DATABASES
 
 # Update database configuration with $DATABASE_URL.
-DATABASES['default'] = dj_database_url.config()
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
