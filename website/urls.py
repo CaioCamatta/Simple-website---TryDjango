@@ -22,6 +22,8 @@ urlpatterns = [
     url(r'^', include('newsletter.urls', namespace="newsletter")),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('registration.backends.default.urls')),
+    url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
+        {'document_root': settings.STATIC_ROOT, 'show_indexes': settings.DEBUG}),
 ]
 
 handler500 = 'newsletter.views.handler500'
