@@ -52,7 +52,6 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE_CLASSES = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -147,7 +146,7 @@ STATICFILES_DIRS = [
     # '/var/www/static/',
 ]
 
-# media is like static, but its used when you're not draging it to the folder.
+# media is like static, but its used when you're not draging it to the folder.he
 # files that are uploaded during normal stage of development(from users, not draging to the folder) are media files
 # -user uploaded-
 MEDIA_URL = '/media/'
