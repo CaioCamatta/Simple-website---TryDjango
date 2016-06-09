@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 SECRET_KEY = 'bogo%m6&1gsl3@t&1@^70wuis58h1qs(bnwwqb9b%t^!sr)w5x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*', 'loclahost']
+ALLOWED_HOSTS = ['*', 'localhost']
 
 EMAIL_HOST = 'smtp.email.com'
 EMAIL_HOST_USER = 'someemail@email.com'
