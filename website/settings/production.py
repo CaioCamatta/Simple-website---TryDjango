@@ -137,7 +137,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # static root shouldn't be inside the project, for security reasons
-STATIC_ROOT = os.path.join(BASE_DIR, "static_deployment", "static_root")
+# STATIC_ROOT = os.path.join(BASE_DIR, "static_deployment", "static_root")
+STATIC_ROOT = 'app/static_deployment/'
 
 # the 'static' location. this is for production, we store our static files here,
 # and use collectstatic to save to STATIC_ROOT
