@@ -52,6 +52,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE_CLASSES = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -137,7 +138,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # static root shouldn't be inside the project, for security reasons
-STATIC_ROOT = os.path.join(BASE_DIR, "static", "static_root")
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # the 'static' location. this is for production, we store our static files here,
 # and use collectstatic to save to STATIC_ROOT
