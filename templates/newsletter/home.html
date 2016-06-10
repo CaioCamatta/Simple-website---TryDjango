@@ -4,14 +4,14 @@
 {% load crispy_forms_tags %}
 {% load staticfiles %}
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Home</title>
-        {% block head_title%}Welcome | {{ block.super }}{% endblock %}
-    </head>
-    <body>
-        <!--Changes style only in this view-->
-        <style>
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    {% block head_title%}Welcome | {{ block.super }}{% endblock %}
+</head>
+<body>
+<!--Changes style only in this view-->
+<style>
             {% block style %}
             .jumbotron{
                 background-color: #1dd765;
@@ -22,82 +22,82 @@
             {% endblock %}
         </style>
 
-        {% block jumbotron %}
-        <div class="row">
-            <!-- Main component for a primary marketing message or call to action -->
-            <div class="jumbotron" style="min-height:400px;">
-                <div class="container">
-                    <div class="col-sm-6">
-                        <h1>Try Django</h1>
-                        <p>MVP Landing for our website</p>
-                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Join us</a></p>
-                    </div>
+{% block jumbotron %}
+<div class="row">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron" style="min-height:400px;">
+        <div class="container">
+            <div class="col-sm-6">
+                <h1>Try Django</h1>
+                <p>MVP Landing for our website</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">Join us</a></p>
+            </div>
 
-                    <div class="col-sm-6" style="height:315px;">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/RdGVz104b3E" frameborder="0" allowfullscreen></iframe>
-                            <!--<iframe class="embed-responsive-item" width="560" height="315" src="{% static 'videos/chiron_jumbo.mp4' %}" frameborder="0" allowfullscreen></iframe>-->
-                        </div>
-                    </div>
+            <div class="col-sm-6" style="height:315px;">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/RdGVz104b3E" frameborder="0" allowfullscreen></iframe>
+                    <!--<iframe class="embed-responsive-item" width="560" height="315" src="{% static 'videos/chiron_jumbo.mp4' %}" frameborder="0" allowfullscreen></iframe>-->
                 </div>
-
             </div>
         </div>
-        <!--{{ block.super }}-->
-        {% endblock %}
 
-        {% block content %}
-        {% if request.user.is_authenticated %}
-        <div class="container">
-            {% if request.user.is_staff %}
-            <h1>You're logged in, Staff</h1>
-            <table class="table">
-                {% for i in queryset %}
-                <tr>
-                    <td>{{ forloop.counter }}</td>
-                    <td>{{ i }}</td>
-                    <td>{{ i.full_name }}</td>
-                    <!--|timesince is a filter -->
-                    <td>{{ i.timestamp|timesince }}</td>
-                </tr>
-                {% endfor %}
-            </table>
+    </div>
+</div>
+<!--{{ block.super }}-->
+{% endblock %}
 
-            {% else %}
-            <h1>You're logged in</h1>
-            {% endif %}
+{% block content %}
+{% if request.user.is_authenticated %}
+<div class="container">
+    {% if request.user.is_staff %}
+    <h1>You're logged in, Staff</h1>
+    <table class="table">
+        {% for i in queryset %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ i }}</td>
+            <td>{{ i.full_name }}</td>
+            <!--|timesince is a filter -->
+            <td>{{ i.timestamp|timesince }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    {% else %}
+    <h1>You're logged in</h1>
+    {% endif %}
+</div>
+{% else %}
+<div class="row">
+    <div class="container">
+        <div class="col-xs-3 pull-right text-align-center">
+            <p class="lead">Welcome</p>
+            <p>User: <strong>{{ request.user }}</strong></p>
+            <form method="POST" action="">{% csrf_token %}
+                <!-- instead of form.as_p (as paragraph), we use |crispy, to make it look great -->
+                {{ form|crispy }}
+                <input class="btn btn-primary" type="submit" value="SignUp" />
+                <!--its safer to use context-->
+            </form>
         </div>
-        {% else %}
-        <div class="row">
-            <div class="container">
-                <div class="col-xs-3 pull-right text-align-center">
-                    <p class="lead">Welcome</p>
-                    <p>User: <strong>{{ request.user }}</strong></p>
-                    <form method="POST" action="">{% csrf_token %}
-                        <!-- instead of form.as_p (as paragraph), we use |crispy, to make it look great -->
-                        {{ form|crispy }}
-                        <input class="btn btn-primary" type="submit" value="SignUp" />
-                        <!--its safer to use context-->
-                    </form>
-                </div>
-                <div class="col-xs-3 text-align-center">
-                    <p class="lead">Built with Django</p>
-                    <i class="fa fa-car fa-5x" aria-hidden="true"></i>
-                </div>
-                <div class="col-xs-3 text-align-center">
-                    <p class="lead">Built with Bootstrap3</p>
+        <div class="col-xs-3 text-align-center">
+            <p class="lead">Built with Django</p>
+            <i class="fa fa-car fa-5x" aria-hidden="true"></i>
+        </div>
+        <div class="col-xs-3 text-align-center">
+            <p class="lead">Built with Bootstrap3</p>
                     <span class="fa-stack fa-lg">
                         <i class="fa fa-refresh fa-spin fa-5x fa-fw fa-stack-2x"></i>
                         <i class="fa fa-star fa-1x fa-stack-1x" aria-hidden="true"></i>
                     </span>
-                </div>
-                <div class="col-xs-3 text-align-center">
-                    <p class="lead">Always open source</p>
-                    <i class="fa fa-money fa-5x" aria-hidden="true"></i
-                </div>
-            </div>
         </div>
-        {% endif %}
-        {% endblock %}
-    </body>
+        <div class="col-xs-3 text-align-center">
+            <p class="lead">Always open source</p>
+            <i class="fa fa-money fa-5x" aria-hidden="true"></i
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+</body>
 </html>
