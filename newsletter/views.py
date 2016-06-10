@@ -21,31 +21,31 @@ def home(request):
         "form": form,
     }
 
-    # # checks if the given data is valid, if the model is valid, like making sure the name is/not blank, etc
-    # if form.is_valid():
-    #     # sets variable but doesnt save it. allows us to do something before saving
-    #     instance = form.save(commit=False)
-    #     # sets variable 'full_name' to be the full_name data from the form
-    #     full_name = form.cleaned_data.get("full_name")
-    #     # if its empty, sets the var above^ to the string, else leave as given
-    #     if not full_name:
-    #         full_name = "New Full Name"
-    #     # sets the full_name from the form to the full_name var.
-    #     instance.full_name = full_name
-    #     instance.save()
-    #     # after completing the forms, change the context
-    #     context = {
-    #         "template_title": "Success, " + instance.full_name,
-    #     }
-    # if request.user.is_authenticated() and request.user.is_staff:
-    #     # print(SignUp.objects.all().all())
-    #     # for instance in SignUp.objects.all():
-    #     #    print(instance.full_name)
-    #     queryset = SignUp.objects.all().order_by('-timestamp')
-    #     #.filter(full_name__icontains="Caio Camatta")
-    #     context = {
-    #         "queryset": queryset,
-    #     }
+    # checks if the given data is valid, if the model is valid, like making sure the name is/not blank, etc
+    if form.is_valid():
+        # sets variable but doesnt save it. allows us to do something before saving
+        instance = form.save(commit=False)
+        # sets variable 'full_name' to be the full_name data from the form
+        full_name = form.cleaned_data.get("full_name")
+        # if its empty, sets the var above^ to the string, else leave as given
+        if not full_name:
+            full_name = "New Full Name"
+        # sets the full_name from the form to the full_name var.
+        instance.full_name = full_name
+        instance.save()
+        # after completing the forms, change the context
+        context = {
+            "template_title": "Success, " + instance.full_name,
+        }
+    if request.user.is_authenticated() and request.user.is_staff:
+        # print(SignUp.objects.all().all())
+        # for instance in SignUp.objects.all():
+        #    print(instance.full_name)
+        queryset = SignUp.objects.all().order_by('-timestamp')
+        #.filter(full_name__icontains="Caio Camatta")
+        context = {
+            "queryset": queryset,
+        }
 
     return render(request, "newsletter/home.html", context)
 
