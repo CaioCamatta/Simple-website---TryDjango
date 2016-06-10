@@ -90,7 +90,7 @@ def contact(request):
 
 
 def about(request):
-    return render(request, 'newsletter/about.html', {})
+    return render(request, 'newsletter/home.html', {})
 
 
 def handler404(request):
