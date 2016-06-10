@@ -9,7 +9,7 @@ from .models import SignUp
 
 
 # Requests are what you request from the server. The server return something back.
-def home(request):
+def index(request):
     # title = "Welcome"
     # # request.POST runs through the validators, if there's no data it doesnt run through it
     # # if request.POST is true (in this case if you press the button), use the POST information in the validators,
