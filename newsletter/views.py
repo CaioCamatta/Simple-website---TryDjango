@@ -66,19 +66,19 @@ def contact(request):
         form_message = form.cleaned_data.get("message")
         form_full_name = form.cleaned_data.get("full_name")
 
-        """ Send email """
-        subject = "Site contact form"
-        from_email = settings.EMAIL_HOST_USER
-        to_email = [from_email, 'anotheremail@email.com']
-        contact_message = "%s: %s via %s"%(form_full_name, form_message, form_email)
-        some_html_message="<p>Hello<p>"
-        # after defining the info, use it to send email
-        send_mail(subject,
-                  contact_message,
-                  from_email,
-                  [to_email],
-                  html_message=some_html_message,
-                  fail_silently=True)
+        # """ Send email """
+        # subject = "Site contact form"
+        # from_email = settings.EMAIL_HOST_USER
+        # to_email = [from_email, 'anotheremail@email.com']
+        # contact_message = "%s: %s via %s"%(form_full_name, form_message, form_email)
+        # some_html_message="<p>Hello<p>"
+        # # after defining the info, use it to send email
+        # send_mail(subject,
+        #           contact_message,
+        #           from_email,
+        #           [to_email],
+        #           html_message=some_html_message,
+        #           fail_silently=True)
 
 
     context = {
