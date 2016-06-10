@@ -11,16 +11,16 @@
 </head>
 <body>
 <!--Changes style only in this view-->
-<!--<style>-->
-            <!--{% block style %}-->
-            <!--.jumbotron{-->
-                <!--background-color: #1dd765;-->
-            <!--}-->
-            <!--.navbar{-->
-                <!--margin-bottom: 0px !important;-->
-            <!--}-->
-            <!--{% endblock %}-->
-<!--</style>-->
+<style>
+            {% block style %}
+            .jumbotron{
+                background-color: #1dd765;
+            }
+            .navbar{
+                margin-bottom: 0px !important;
+            }
+            {% endblock %}
+</style>
 
 {% block jumbotron %}
 <div class="row">
@@ -36,7 +36,6 @@
             <div class="col-sm-6" style="height:315px;">
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/RdGVz104b3E" frameborder="0" allowfullscreen></iframe>
-                    <!--<iframe class="embed-responsive-item" width="560" height="315" src="{% static 'videos/chiron_jumbo.mp4' %}" frameborder="0" allowfullscreen></iframe>-->
                 </div>
             </div>
         </div>
