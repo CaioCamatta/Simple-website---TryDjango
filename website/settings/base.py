@@ -26,7 +26,7 @@ SECRET_KEY = 'bogo%m6&1gsl3@t&1@^70wuis58h1qs(bnwwqb9b%t^!sr)w5x'
 DEBUG = False
 TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 EMAIL_HOST = 'smtp.email.com'
 EMAIL_HOST_USER = 'someemail@email.com'
