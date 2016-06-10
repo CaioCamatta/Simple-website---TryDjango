@@ -24,15 +24,14 @@ SECRET_KEY = 'bogo%m6&1gsl3@t&1@^70wuis58h1qs(bnwwqb9b%t^!sr)w5x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
-# EMAIL_HOST = 'smtp.email.com'
-# EMAIL_HOST_USER = 'someemail@email.com'
-# EMAIL_HOST_PASSWORD = 'password'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.email.com'
+EMAIL_HOST_USER = 'someemail@email.com'
+EMAIL_HOST_PASSWORD = 'password'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 # Application definition
 
@@ -132,29 +131,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-# STATIC_URL = '/static/'
-#
-# # static root shouldn't be inside the project, for security reasons
-# STATIC_ROOT = os.path.join(BASE_DIR, "static_deployment", "static_root")
-#
-# # the 'static' location. this is for production, we store our static files here,
-# # and use collectstatic to save to STATIC_ROOT
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, "static_production", "our_static"),
-#     # '/var/www/static/',
-# ]
-
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
-# Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
-)
+# static root shouldn't be inside the project, for security reasons
+STATIC_ROOT = os.path.join(BASE_DIR, "static_deployment", "static_root")
+
+# the 'static' location. this is for production, we store our static files here,
+# and use collectstatic to save to STATIC_ROOT
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static_production", "our_static"),
+    # '/var/www/static/',
+]
 
 # media is like static, but its used when you're not draging it to the folder.
 # files that are uploaded during normal stage of development(from users, not draging to the folder) are media files
