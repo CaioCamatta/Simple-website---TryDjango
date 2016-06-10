@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 {% extends 'newsletter/base.html' %}
 <!-- load crispy -->
 {% load crispy_forms_tags %}
@@ -10,40 +11,40 @@
 </head>
 <body>
 <!--Changes style only in this view-->
-<style>
-            {% block style %}
-            .jumbotron{
-                background-color: #1dd765;
-            }
-            .navbar{
-                margin-bottom: 0px !important;
-            }
-            {% endblock %}
-        </style>
+<!--<style>-->
+            <!--{% block style %}-->
+            <!--.jumbotron{-->
+                <!--background-color: #1dd765;-->
+            <!--}-->
+            <!--.navbar{-->
+                <!--margin-bottom: 0px !important;-->
+            <!--}-->
+            <!--{% endblock %}-->
+        <!--</style>-->
 
-{% block jumbotron %}
-<div class="row">
-    <!-- Main component for a primary marketing message or call to action -->
-    <div class="jumbotron" style="min-height:400px;">
-        <div class="container">
-            <div class="col-sm-6">
-                <h1>Try Django</h1>
-                <p>MVP Landing for our website</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Join us</a></p>
-            </div>
+<!--{% block jumbotron %}-->
+<!--<div class="row">-->
+    <!--&lt;!&ndash; Main component for a primary marketing message or call to action &ndash;&gt;-->
+    <!--<div class="jumbotron" style="min-height:400px;">-->
+        <!--<div class="container">-->
+            <!--<div class="col-sm-6">-->
+                <!--<h1>Try Django</h1>-->
+                <!--<p>MVP Landing for our website</p>-->
+                <!--<p><a class="btn btn-lg btn-primary" href="#" role="button">Join us</a></p>-->
+            <!--</div>-->
 
-            <div class="col-sm-6" style="height:315px;">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/RdGVz104b3E" frameborder="0" allowfullscreen></iframe>
-                    <!--<iframe class="embed-responsive-item" width="560" height="315" src="{% static 'videos/chiron_jumbo.mp4' %}" frameborder="0" allowfullscreen></iframe>-->
-                </div>
-            </div>
-        </div>
+            <!--<div class="col-sm-6" style="height:315px;">-->
+                <!--<div class="embed-responsive embed-responsive-16by9">-->
+                    <!--<iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/RdGVz104b3E" frameborder="0" allowfullscreen></iframe>-->
+                    <!--&lt;!&ndash;<iframe class="embed-responsive-item" width="560" height="315" src="{% static 'videos/chiron_jumbo.mp4' %}" frameborder="0" allowfullscreen></iframe>&ndash;&gt;-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
 
-    </div>
-</div>
-<!--{{ block.super }}-->
-{% endblock %}
+    <!--</div>-->
+<!--</div>-->
+<!--&lt;!&ndash;{{ block.super }}&ndash;&gt;-->
+<!--{% endblock %}-->
 
 {% block content %}
 {% if request.user.is_authenticated %}
