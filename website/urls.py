@@ -19,7 +19,7 @@ from django.conf import settings
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^$', include('newsletter.urls', namespace="newsletter")),
+    url(r'^', include('newsletter.urls', namespace="newsletter")),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
