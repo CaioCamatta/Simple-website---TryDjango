@@ -47,7 +47,7 @@ def home(request):
             "queryset": queryset,
         }
 
-    return render(request, "newsletter/home.html", context)
+    return render(request, "newsletter/homepage.html", context)
 
 
 def contact(request):
@@ -90,7 +90,7 @@ def contact(request):
 
 
 def about(request):
-    return render(request, 'newsletter/home.html', {})
+    return render(request, 'newsletter/about.html', {})
 
 
 def handler404(request):
